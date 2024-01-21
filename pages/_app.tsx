@@ -3,7 +3,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ToastContainer } from "react-toastify";
-import Layout from "../components/Layout";
 import Head from "next/head";
 declare global {
     interface Window {
@@ -14,13 +13,8 @@ declare global {
 function MyApp({ Component, pageProps: { session, ...pageProps }}: AppProps) {
     return (
         <>
-            <Head>
-            </Head>
-
-            <Layout>
-                <Component {...pageProps} />
-                <ToastContainer hideProgressBar={true} autoClose={3000} />
-            </Layout>
+            <Component {...pageProps} />
+            <ToastContainer hideProgressBar={true} autoClose={3000} />
         </>
     );
 }
